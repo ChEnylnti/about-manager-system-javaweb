@@ -9,7 +9,7 @@ public class UserDao {
         PreparedStatement pstmt=null;
         try{
             User user1=checkLogin(user.getId());
-            if (user.getId()!=user1.getId()){
+            if (user!=user1){
             String sql="INSERT  INTO `user`(`id`,`password`) VALUES (?,?);";
             pstmt=conn.prepareStatement(sql);
             pstmt.setString(1,user.getId());
